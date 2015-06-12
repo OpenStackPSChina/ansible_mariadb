@@ -1,0 +1,20 @@
+---
+- name: restart mariadb
+  service: name=mysql state=restarted
+  become: yes
+  become_method: sudo
+
+- name: stop mariadb
+  service: name=mysql state=stopped
+  become: yes
+  become_method: sudo
+
+- name: start mariadb
+  service: name=mysql state=started
+  become: yes
+  become_method: sudo
+
+- name: reload mariadb
+  service: name=mysql state=reloaded
+  become: yes
+  become_method: sudo

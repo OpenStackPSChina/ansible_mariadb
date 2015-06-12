@@ -1,0 +1,5 @@
+---
+
+- hosts: mariadb-server
+  roles:
+     - role: mariadb

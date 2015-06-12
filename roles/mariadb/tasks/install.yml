@@ -1,0 +1,15 @@
+---
+
+#
+# Install Mariadb
+#
+
+- name: Install Mariadb
+  apt: name="{{ item }}" state=latest
+  with_items:
+     - mariadb-server
+     - python-mysqldb
+  become: yes
+  become_method: sudo
+  environment:
+    http_proxy: http://web-proxy.sgp.hp.com:8080/
